@@ -34,8 +34,6 @@ func RemoteCommands(ir *lirc.Router) []Remote {
 	remoteCommands := make([]Remote, 0)
 	copy(remotes, remotesReply.Data)
 
-	fmt.Printf("%+v\n", remotes)
-
 	for j := 0; j < len(remotes); j++ {
 		currentRemote := remotes[j]
 		log.Printf("Getting commands for %v\n", currentRemote)
