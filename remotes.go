@@ -26,7 +26,7 @@ func parseKeyNames(reply []string) []string {
 
 // RemoteCommands Gets all the available remotes and their commands from lircd,
 // given the lircd connection.
-func RemoteCommands(ir lirc.Router) []Remote {
+func RemoteCommands(ir *lirc.Router) []Remote {
 	remotesReply := ir.Command(`LIST`)
 	// the ir object only keeps one Data object across replies, it seems
 	// so, copy the list of remotes out to a new slice
